@@ -1,0 +1,1 @@
+aws elbv2 create-load-balancer --name ecs-load-balancer --subnets subnet-59b23d23 subnet-7681773a subnet-9b3869f3 --profile=dittrex --region=us-east-2
