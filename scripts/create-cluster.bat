@@ -1,0 +1,1 @@
+aws ecs create-cluster --cluster-name "jnk_tst_cluster" --profile dittrex --region us-east-2

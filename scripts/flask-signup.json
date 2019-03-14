@@ -1,0 +1,147 @@
+
+
+{
+ "taskDefinition": {
+    "family": "flask-signup",
+    "taskRoleArn": "",
+    "executionRoleArn": "arn:aws:iam::509089852375:role/AWSECS_TaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "flask-signup",
+            "image": "509089852375.dkr.ecr.us-east-2.amazonaws.com/py-flask-ecs-test:v_%BUILD_NUMBER%",
+            "cpu": 10,
+            "memory": 256,
+            "portMappings": [
+                {
+
+                    "hostPort": 5000,
+                    "protocol": "tcp",
+                    "containerPort": 5000
+                }
+            ],
+            "essential": true,
+            "entryPoint": [
+                ""
+            ],
+            "command": [
+                ""
+            ],
+            "environment": [
+                
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "flask-signup-vol",
+                    "containerPath": "/data",
+                    "readOnly": true
+                }
+            ],
+            
+            "linuxParameters": {
+                "capabilities": {
+                    "add": [
+                        ""
+                    ],
+                    "drop": [
+                        ""
+                    ]
+                },
+                "devices": [
+                    {
+                        "hostPath": "",
+                        "containerPath": "",
+                        "permissions": [
+                            "mknod"
+                        ]
+                    }
+                ],
+                "initProcessEnabled": true,
+                "sharedMemorySize": 0,
+                "tmpfs": [
+                    {
+                        "containerPath": "",
+                        "size": 0,
+                        "mountOptions": [
+                            ""
+                        ]
+                    }
+                ]
+            },
+           
+            "user": "",
+        
+            "disableNetworking": true,
+            "privileged": true,
+            "readonlyRootFilesystem": true,
+            "dnsServers": [
+                ""
+            ],
+            "dnsSearchDomains": [
+                ""
+            ],
+            "extraHosts": [
+                {
+                    "hostname": "",
+                    "ipAddress": ""
+                }
+            ],
+            "dockerSecurityOptions": [
+                ""
+            ],
+            "interactive": true,
+            "pseudoTerminal": true,
+            "dockerLabels": {
+                "KeyName": ""
+            },
+            "ulimits": [
+                {
+                    "name": "rss",
+                    "softLimit": 0,
+                    "hardLimit": 0
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "syslog",
+                "options": {
+                    "KeyName": ""
+                }
+            },
+            "healthCheck": {
+                "command": [
+                    ""
+                ],
+                "interval": 0,
+                "timeout": 0,
+                "retries": 0,
+                "startPeriod": 0
+            },
+            "systemControls": [
+                {
+                    "namespace": "",
+                    "value": ""
+                }
+            ]
+            
+        }
+    ],
+    "volumes": [
+        {
+            "name": "flask-signup-vol",
+            "dockerVolumeConfiguration": {
+                "scope": "task",
+                "autoprovision": true
+                
+            }
+        }
+    ],
+    
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+    
+
+}
+}
